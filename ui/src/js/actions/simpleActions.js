@@ -1,8 +1,11 @@
-import { SIMPLE_ACTION } from '../constants/action-types';
+import * as msg from '../constants/action-types';
 
-const simpleAction = payload => ({
-  type: SIMPLE_ACTION,
+export const simpleAction = payload => ({
+  type: msg.SIMPLE_ACTION,
   payload,
 });
 
-export default simpleAction;
+export const userSelect = payload => ({
+  type: msg.USER_SELECTION,
+  payload,
+});
