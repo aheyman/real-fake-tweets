@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { rootReducer } from './simpleReducer';
+import { tweetReducer } from './tweetReducer';
 
-export default combineReducers({
-  rootReducer,
+export const rootReducer = combineReducers({
+  tweetInfo: tweetReducer,
 });
+
+export default rootReducer;

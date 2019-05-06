@@ -38,7 +38,8 @@ const styles = {
   },
 };
 
-function TweetCard({ classes, userSelection }) {
+function TweetCard(props) {
+  const { classes, userSelection, tweetData } = props;
   return (
     <Card className={classes.card} raised square>
       <CardContent>
@@ -46,10 +47,7 @@ function TweetCard({ classes, userSelection }) {
           Trump Tweets
         </Typography>
         <Typography variant="h5" component="h2">
-          How can it be possible that James Woods (and many others), a strong but responsible
-          Conservative Voice, is banned from Twitter? Social Media &amp; Fake News Media, together
-          with their partner, the Democrat Party, have no idea the problems they are causing for
-          themselves. VERY UNFAIR!
+          {tweetData}
         </Typography>
         <Typography>- Donald J. Trump</Typography>
         <CardActions className={classes.buttons}>
@@ -69,13 +67,13 @@ function TweetCard({ classes, userSelection }) {
           </Button>
         </CardActions>
       </CardContent>
-      {' '}
     </Card>
   );
 }
 
 const mapStateToProps = state => ({
   ...state,
+  tweetData: state.tweetInfo.tweetContents,
 });
 
 const mapDispatchToProps = dispatch => ({
